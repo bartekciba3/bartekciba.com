@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import TestimonialCard from '../components/TestimonialCard';
 import ServiceCard from '../components/ServiceCard';
+import SEO from '../components/SEO';
 import { TESTIMONIALS } from '../constants/testimonials';
 import { SERVICES } from '../constants/services';
 
@@ -280,7 +281,7 @@ const ServicesGrid = styled.div`
 const TestimonialsSection = styled.section`
   padding: 6rem 0;
   position: relative;
-  background-image: url('/assets/images/bartek-bg.jpg');
+  background-image: url('/assets/images/bartek-bg.webp');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -319,6 +320,15 @@ const HomePage = () => {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
   const [imageLoaded, setImageLoaded] = useState(false);
   
+  // SEO configuration for the home page
+  const seoConfig = {
+    title: 'Bartek Ciba | Professional Personal Trainer in London',
+    description: 'Transform your fitness journey with Bartek Ciba, certified personal trainer specializing in strength training, weight loss, and personalized fitness plans in London.',
+    keywords: 'personal trainer, fitness coach, strength training, weight loss, London personal trainer, Bartek Ciba, fitness expert',
+    image: '/assets/images/bartek_pose_front.webp',
+    type: 'website'
+  };
+  
   // Handle multiple image loading
   useEffect(() => {
     let loadedCount = 0;
@@ -332,11 +342,11 @@ const HomePage = () => {
     };
     
     const frontImg = new Image();
-    frontImg.src = '/assets/images/bartek_pose_front.png';
+    frontImg.src = '/assets/images/bartek_pose_front.webp';
     frontImg.onload = checkAllLoaded;
     
     const sideImg = new Image();
-    sideImg.src = '/assets/images/bartek_pose_side.png';
+    sideImg.src = '/assets/images/bartek_pose_side.webp';
     sideImg.onload = checkAllLoaded;
   }, []);
   
@@ -376,6 +386,9 @@ const HomePage = () => {
   
   return (
     <>
+      {/* SEO Configuration */}
+      <SEO {...seoConfig} />
+      
       <HeroSectionWrapper>
         <HeroContentSide>
           <HeroContent>
@@ -421,14 +434,14 @@ const HomePage = () => {
         <HeroImageContainer>
           <ImageWrapper isFirst>
             <HeroImage 
-              src="/assets/images/bartek_pose_side.png" 
+              src="/assets/images/bartek_pose_side.webp" 
               alt="Bartek Ciba striking a side bodybuilding pose" 
               isLoaded={imageLoaded} 
             />
           </ImageWrapper>
           <ImageWrapper>
             <HeroImage 
-              src="/assets/images/bartek_pose_front.png" 
+              src="/assets/images/bartek_pose_front.webp" 
               alt="Bartek Ciba striking a front bodybuilding pose" 
               isLoaded={imageLoaded} 
             />

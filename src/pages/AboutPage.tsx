@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { motion, useAnimation, useInView } from 'framer-motion';
+import SEO from '../components/SEO';
 
 const AboutContainer = styled.div`
   padding-top: 80px;
@@ -82,6 +83,14 @@ const AboutPage = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
   
+  // SEO configuration for the about page
+  const seoConfig = {
+    title: 'About Bartek Ciba | Professional Personal Trainer',
+    description: 'Learn about Bartek Ciba, experienced personal trainer with a passion for helping clients achieve their fitness goals through personalized training programs.',
+    keywords: 'about Bartek Ciba, personal trainer background, fitness expertise, training philosophy, London personal trainer',
+    image: '/assets/images/bartek_pose_side.webp'
+  };
+  
   useEffect(() => {
     if (isInView) {
       controls.start('visible');
@@ -118,6 +127,8 @@ const AboutPage = () => {
   
   return (
     <AboutContainer>
+      {/* SEO Configuration */}
+      <SEO {...seoConfig} />
       <AboutSection ref={ref}>
         <AboutContent
           variants={containerVariants}
