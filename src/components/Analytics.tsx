@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 // Replace with your actual GA4 measurement ID when deploying to production
-const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+const GA_MEASUREMENT_ID = 'G-D68K1YV939';
 
 declare global {
   interface Window {
@@ -18,6 +18,7 @@ const Analytics = () => {
     const script1 = document.createElement('script');
     script1.async = true;
     script1.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+    script1.id = 'ga-gtag-script';
     
     const script2 = document.createElement('script');
     script2.innerHTML = `
@@ -26,14 +27,23 @@ const Analytics = () => {
       gtag('js', new Date());
       gtag('config', '${GA_MEASUREMENT_ID}', { page_path: '${location.pathname}' });
     `;
+    script2.id = 'ga-inline-script';
     
     document.head.appendChild(script1);
     document.head.appendChild(script2);
 
     return () => {
-      // Clean up scripts when component unmounts
-      document.head.removeChild(script1);
-      document.head.removeChild(script2);
+      // Clean up scripts when component unmounts - safely remove only if they exist
+      const scriptElement1 = document.getElementById('ga-gtag-script');
+      const scriptElement2 = document.getElementById('ga-inline-script');
+      
+      if (scriptElement1 && scriptElement1.parentNode) {
+        scriptElement1.parentNode.removeChild(scriptElement1);
+      }
+      
+      if (scriptElement2 && scriptElement2.parentNode) {
+        scriptElement2.parentNode.removeChild(scriptElement2);
+      }
     };
   }, [location.pathname]);
 

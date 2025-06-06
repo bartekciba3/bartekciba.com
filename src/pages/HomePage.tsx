@@ -263,10 +263,10 @@ const HeroButton = styled(motion.button)`
 `;
 
 const ServicesSection = styled.section`
-  padding: 5rem 0;
+  padding: 3rem 0;
   
   @media (max-width: 768px) {
-    padding: 3rem 0;
+    padding: 2rem 0;
   }
 `;
 
@@ -433,14 +433,14 @@ const HomePage = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
             >
-              Personal Trainer in Ballinasloe, Galway
+              Bartek Ciba - Fitness Expert
             </HeroTagline>
             <HeroTitle
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              Transform Your Body.<br />Elevate Your Life.
+              Personal Trainer in<br />Ballinasloe, Galway
             </HeroTitle>
             <HeroSubtitle
               initial={{ opacity: 0 }}

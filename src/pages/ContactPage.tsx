@@ -119,11 +119,11 @@ const SocialIcon = styled(motion.a)`
 `;
 
 const ContactPage = () => {
-  // SEO configuration for the contact page
+  // SEO configuration for the contact page with consistent Ballinasloe and Galway keywords
   const seoConfig = {
-    title: 'Contact Bartek Ciba | Personal Trainer in Galway',
-    description: 'Get in touch with Bartek Ciba for personal training services in Galway. Available for consultations, training sessions, and fitness program inquiries.',
-    keywords: 'contact Bartek Ciba, personal trainer contact, fitness consultation, Galway personal trainer contact, training inquiry',
+    title: 'Contact Bartek Ciba | Personal Trainer in Ballinasloe, Galway',
+    description: 'Get in touch with Bartek Ciba for personal training services in Ballinasloe, Galway. Available for consultations, training sessions, and fitness program inquiries.',
+    keywords: 'Personal Trainer Ballinasloe, Personal Trainer Galway, contact Bartek Ciba, fitness consultation, training inquiry, online coaching',
     image: '/assets/images/bartek_pose_side.webp'
   };
 
@@ -140,7 +140,7 @@ const ContactPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <ContactTitle>Get in Touch</ContactTitle>
+            <ContactTitle>Get in Touch | Bartek Ciba</ContactTitle>
             <ContactMessage>
               For the fastest response, reach me through WhatsApp. For business inquiries and collaboration opportunities, please send an email and I'll get back to you within 24 hours.
             </ContactMessage>
