@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "node deploy.js",
+    "deploy:cf": "npm run build && npx wrangler deploy"
   },
   "dependencies": {
     "@types/styled-components": "^5.1.34",
