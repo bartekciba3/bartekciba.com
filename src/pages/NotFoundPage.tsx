@@ -33,7 +33,7 @@ const NotFoundTitle = styled.h1`
 const NotFoundSubtitle = styled.h2`
   font-size: 2rem;
   margin: 1rem 0 2rem;
-  color: var(--text-color);
+  color: var(--primary-color-accent);
 `;
 
 const NotFoundText = styled.p`
