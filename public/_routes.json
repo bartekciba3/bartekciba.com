@@ -1,19 +1,17 @@
 {
   "version": 1,
-  "include": ["/*"],
-  "exclude": [
-    "/assets/*",
-    "/images/*",
-    "/*.ico",
-    "/*.png",
-    "/*.svg",
-    "/*.webp",
-    "/*.jpg",
-    "/*.jpeg",
-    "/*.gif",
-    "/*.json",
-    "/*.xml",
-    "/*.txt",
-    "/*.pdf"
+  "routes": [
+    {
+      "src": "^/assets/.*",
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "^/[^.]*$|^/[^.]*/$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^/(.*)",
+      "dest": "/$1"
+    }
   ]
 }
