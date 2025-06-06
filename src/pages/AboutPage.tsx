@@ -93,11 +93,11 @@ const AboutPage = () => {
     }
   }, [inViewRef]);
   
-  // SEO configuration for the about page
+  // SEO configuration for the about page with Ballinasloe and Galway keywords
   const seoConfig = {
-    title: 'About Bartek Ciba | Professional Personal Trainer',
-    description: 'Learn about Bartek Ciba, experienced personal trainer with a passion for helping clients achieve their fitness goals through personalized training programs.',
-    keywords: 'about Bartek Ciba, personal trainer background, fitness expertise, training philosophy, London personal trainer',
+    title: 'About Bartek Ciba | Personal Trainer in Ballinasloe, Galway',
+    description: 'Learn about Bartek Ciba, experienced personal trainer in Ballinasloe, Galway with a passion for helping clients achieve their fitness goals through personalized training and diet planning.',
+    keywords: 'Personal Trainer Ballinasloe, Personal Trainer Galway, about Bartek Ciba, fitness expertise, training philosophy, online coaching, fat loss specialist',
     image: '/assets/images/bartek_pose_side.webp'
   };
   

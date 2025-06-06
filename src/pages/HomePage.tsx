@@ -346,19 +346,19 @@ const TestimonialsGrid = styled.div`
 // TestimonialCard component is now imported from '../components/TestimonialCard'
 
 const HomePage = () => {
+  // SEO configuration for the home page with targeted keywords for Ballinasloe and Galway
+  const seoConfig = {
+    title: 'Bartek Ciba | Personal Trainer in Ballinasloe, Galway',
+    description: 'Professional personal trainer in Ballinasloe, Galway offering personalized fitness coaching, diet planning, and online training programs for effective fat loss and muscle gain.',
+    keywords: 'Personal Trainer Ballinasloe, Personal Trainer Galway, Bartek Ciba, Gym Coach, Online Coaching, Diet Planning, Fat Loss, Fitness Trainer Ballinasloe',
+    image: '/assets/images/bartek_pose_front.webp',
+    type: 'website'
+  };
+
   const controls = useAnimation();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
   const [imageLoaded, setImageLoaded] = useState(false);
-  
-  // SEO configuration for the home page
-  const seoConfig = {
-    title: 'Bartek Ciba | Professional Personal Trainer in London',
-    description: 'Transform your fitness journey with Bartek Ciba, certified personal trainer specializing in strength training, weight loss, and personalized fitness plans in London.',
-    keywords: 'personal trainer, fitness coach, strength training, weight loss, London personal trainer, Bartek Ciba, fitness expert',
-    image: '/assets/images/bartek_pose_front.webp',
-    type: 'website'
-  };
   
   // Handle multiple image loading
   useEffect(() => {
@@ -433,7 +433,7 @@ const HomePage = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
             >
-              Personal Trainer
+              Personal Trainer in Ballinasloe, Galway
             </HeroTagline>
             <HeroTitle
               initial={{ opacity: 0, y: -20 }}
@@ -447,7 +447,7 @@ const HomePage = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              After winning 1st place in the Natural Junior category at the Muscle Contest in Dublin, I've dedicated my career to helping others achieve their fitness goals through personalized training and nutrition plans.
+              As a certified personal trainer based in Ballinasloe, Galway, I help clients achieve their fitness goals through personalized training programs, online coaching, and diet planning. After winning 1st place in the Natural Junior category at the Muscle Contest in Dublin, I've dedicated my career to effective fat loss and muscle gain strategies.
             </HeroSubtitle>
             <HeroButton
               initial={{ opacity: 0, y: 20 }}

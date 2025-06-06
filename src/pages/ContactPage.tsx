@@ -121,9 +121,9 @@ const SocialIcon = styled(motion.a)`
 const ContactPage = () => {
   // SEO configuration for the contact page
   const seoConfig = {
-    title: 'Contact Bartek Ciba | Personal Trainer in London',
-    description: 'Get in touch with Bartek Ciba for personal training services in London. Available for consultations, training sessions, and fitness program inquiries.',
-    keywords: 'contact Bartek Ciba, personal trainer contact, fitness consultation, London personal trainer contact, training inquiry',
+    title: 'Contact Bartek Ciba | Personal Trainer in Galway',
+    description: 'Get in touch with Bartek Ciba for personal training services in Galway. Available for consultations, training sessions, and fitness program inquiries.',
+    keywords: 'contact Bartek Ciba, personal trainer contact, fitness consultation, Galway personal trainer contact, training inquiry',
     image: '/assets/images/bartek_pose_side.webp'
   };
 

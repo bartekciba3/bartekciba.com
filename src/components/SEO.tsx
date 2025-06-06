@@ -10,7 +10,7 @@ interface SEOProps {
 }
 
 const SEO = ({
-  title = 'Bartek Ciba | Professional Personal Trainer in London',
+  title = 'Bartek Ciba | Professional Personal Trainer in Galway',
   description = 'Transform your fitness journey with Bartek Ciba, certified personal trainer specializing in strength training, weight loss, and personalized fitness plans in Galway.',
   keywords = 'personal trainer, fitness coach, strength training, weight loss, Galway personal trainer, Bartek Ciba, fitness expert',
   image = '/assets/images/bartek_pose_side.webp',
