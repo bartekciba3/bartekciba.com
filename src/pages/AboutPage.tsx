@@ -1,7 +1,9 @@
 import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import { motion, useAnimation, useInView } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import SEO from '../components/SEO';
+import { ABOUT_CONTENT } from '../constants/aboutContent';
 
 const AboutContainer = styled.div`
   padding-top: 80px;
@@ -19,7 +21,7 @@ const AboutContent = styled(motion.div)`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
-  align-items: center;
+  align-items: start;
   
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -142,28 +144,20 @@ const AboutPage = () => {
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
               transition={{ duration: 0.6 }}
             >
-              My Story
+              {ABOUT_CONTENT.title}
             </AboutTitle>
-            <AboutParagraph 
-              variants={itemVariants}
-            >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.
-            </AboutParagraph>
-            <AboutParagraph 
-              variants={itemVariants}
-            >
-              Suspendisse in orci enim. Donec suscipit ante in hendrerit posuere. Mauris eleifend fringilla nullam aenean mi ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur suscipit egestas imperdiet. Proin ipsum purus, eleifend vel tincidunt in, dictum vel diam.
-            </AboutParagraph>
-            <AboutParagraph 
-              variants={itemVariants}
-            >
-              Nam blandit quam ut lacus. Quisque ornare risus quis ligula. Phasellus tristique purus a augue condimentum adipiscing. Aenean sagittis. Etiam leo pede, rhoncus venenatis, tristique in, vulputate at, odio. Donec et ipsum et sapien vehicula nonummy.
-            </AboutParagraph>
+            {ABOUT_CONTENT.paragraphs.map((paragraph, index) => (
+              <AboutParagraph 
+                key={index}
+                variants={itemVariants}
+              >
+                {paragraph}
+              </AboutParagraph>
+            ))}
           </AboutText>
           
           <AboutImageContainer
             variants={imageVariants}
-            whileHover={{ scale: 1.03 }}
             transition={{ duration: 0.3 }}
           >
             <AboutImagePlaceholder>

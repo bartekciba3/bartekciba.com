@@ -9,7 +9,7 @@ import { SERVICES } from '../constants/services';
 
 // Modern hero section with dual image showcase
 const HeroSectionWrapper = styled.section`
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: row;
   color: var(--text-color);
@@ -18,6 +18,7 @@ const HeroSectionWrapper = styled.section`
 
   @media (max-width: 992px) {
     flex-direction: column;
+    height: auto;
   }
 `;
 
@@ -51,15 +52,20 @@ const HeroContentSide = styled.div`
   }
 
   @media (max-width: 992px) {
-    padding: 4rem 2rem;
+    padding: 7rem 2rem 4rem;
     align-items: center;
     text-align: center;
     height: auto;
+    min-height: 60vh;
     
     &::before {
       background-position: center;
       opacity: 0.03;
     }
+  }
+
+  @media (max-width: 768px) {
+    padding: 6rem 1.5rem 3rem;
   }
 `;
 
@@ -82,8 +88,13 @@ const HeroImageContainer = styled.div`
   @media (max-width: 992px) {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-    height: 100%;
-    max-height: 70vh;
+    height: auto;
+    max-height: 60vh;
+    padding: 1rem 1rem 2rem;
+  }
+
+  @media (max-width: 768px) {
+    max-height: 50vh;
   }
 `;
 
@@ -117,7 +128,12 @@ const HeroImage = styled.img<{ isLoaded: boolean }>`
   
   @media (max-width: 992px) {
     height: auto;
-    max-height: 65vh;
+    max-height: 55vh;
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    max-height: 45vh;
   }
 `;
 
@@ -182,10 +198,16 @@ const HeroTitle = styled(motion.h1)`
   
   @media (max-width: 992px) {
     font-size: 3.5rem;
+    margin-top: 0;
   }
   
   @media (max-width: 768px) {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2.2rem;
   }
 `;
 
@@ -242,6 +264,10 @@ const HeroButton = styled(motion.button)`
 
 const ServicesSection = styled.section`
   padding: 5rem 0;
+  
+  @media (max-width: 768px) {
+    padding: 3rem 0;
+  }
 `;
 
 const SectionTitle = styled.h2`
@@ -259,6 +285,11 @@ const SectionSubtitle = styled.p`
   max-width: 600px;
   margin: 0 auto 3rem;
   color: #666;
+  padding: 0 1.5rem;
+  
+  @media (max-width: 768px) {
+    margin-bottom: 2rem;
+  }
 `;
 
 const ServicesGrid = styled.div`
