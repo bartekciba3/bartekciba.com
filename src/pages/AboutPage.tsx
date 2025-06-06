@@ -83,7 +83,15 @@ const AboutParagraph = styled(motion.p)`
 const AboutPage = () => {
   const controls = useAnimation();
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const { ref: inViewRef, inView: isInView } = useInView({ threshold: 0.3, triggerOnce: true });
+  
+  // Combine refs
+  useEffect(() => {
+    if (ref.current && inViewRef) {
+      // Use callback ref pattern to set the ref value
+      inViewRef(ref.current);
+    }
+  }, [inViewRef]);
   
   // SEO configuration for the about page
   const seoConfig = {
